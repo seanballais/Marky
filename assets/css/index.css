@@ -10,6 +10,30 @@
          url("../fonts/Wisdom Script AJ.otf") format("opentype");
 }
 /***************/
+img.marky-logo {
+    display: inline;
+    float: left;
+}
+
+div.info-area {
+    margin-left: 20%;
+    margin-right:   20%;
+}
+
+div.info-area-desc {
+    display: inline;
+    float: right;
+    text-align: center;
+}
+
+div.info-area-desc-article {
+    width: 78%;
+}
+
+div.info-area-desc-footer {
+    width: 95%;
+}
+
 header,
 article,
 footer {
@@ -55,4 +79,34 @@ header > nav > ul > li {
     display: inline-block;
     margin-left: 0em;
     margin-right: 0em;
+}
+
+article > div#info-div > img#marky-prop {
+    height: 22%;
+    width: 22%;
+}
+
+footer > hr {
+    border-width: 3px;
+}
+
+footer > div#about-marky {
+    background-color: #ececec;
+    margin-top: 1%;
+    padding: 1%;
+}
+
+footer > div#about-marky > p#footer-desc {
+    text-align: justify;
+}
+
+footer > div#about-marky > p#footer-desc > img#marky-prop-footer {
+    float: left;
+    height: 11%;
+    width: 11%;
+    padding-right: 1%;
+}
+
+footer > div#about-marky > p#footer-desc > span#footer-social-links {
+    display: block;
 }
