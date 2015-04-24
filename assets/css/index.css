@@ -2,17 +2,22 @@
 /// DO NOT CHANGE ANYTHING BELOW UNLESS YU KNOW WHAT YOU'RE DOING
 /// Copyright (C) 2015 Sean Ballais
 **/
-/** Font faces */
+/******************/
+/*   Font faces   */
+/******************/
 @font-face {
     font-family: "Wisdom Script AJ";
     src: url("../fonts/Wisdom Script AJ.otf");
     src: local("Wisdom Script AJ"),
          url("../fonts/Wisdom Script AJ.otf") format("opentype");
 }
+
+/***************/
+/*   Classes   */
 /***************/
 img.marky-logo {
-    display: inline;
-    float: left;
+    display: inline-block;
+    vertical-align: top;
 }
 
 div.info-area {
@@ -20,20 +25,9 @@ div.info-area {
     margin-right:   20%;
 }
 
-div.info-area-desc {
-    display: inline;
-    float: right;
-    text-align: center;
-}
-
-div.info-area-desc-article {
-    width: 78%;
-}
-
-div.info-area-desc-footer {
-    width: 95%;
-}
-
+/*************************/
+/*   Common properties   */
+/*************************/
 header,
 article,
 footer {
@@ -47,6 +41,32 @@ footer {
     text-align: center;
 }
 
+header > nav > ul,
+article > div#info-div > div#info-desc > ul {
+    font-size: 1.35em;
+    list-style: none;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    word-spacing: -0.3em;
+}
+
+header > nav > ul li,
+article > div#info-div > div#info-desc > ul li {
+    display: inline-block;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+header > nav > ul li:hover,
+article > div#info-div > div#info-desc > ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/***************************/
+/*   Specific properties   */
+/***************************/
 header > h1 {
     font-family: "Wisdom Script AJ", sans-serif;
     font-size: 5.35em;    
@@ -60,30 +80,40 @@ header > h1 > small {
     margin-top: 1.25%;
 }
 
-header > nav > ul {
-    font-size: 1.35em;
-    list-style: none;
-    margin-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    word-spacing: -0.3em;
-}
-
-header > nav > ul > li:nth-last-child(-n+9):before {
-    content: "|";
+header > nav > ul li {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
-header > nav > ul > li {
-    display: inline-block;
-    margin-left: 0em;
-    margin-right: 0em;
+header > a > img {
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
-article > div#info-div > img#marky-prop {
-    height: 22%;
-    width: 22%;
+article > div#info-div > div#info-desc {
+    display: inline-block;
+}
+
+article > div#info-div > div#info-desc > img#marky-prop {
+    height: 25%;
+    width: 25%;
+    padding-right: 0.5em;
+}
+
+article > div#info-div > div#info-desc > h1 > small {
+    display: block;
+    font-size: 0.5em;
+}
+
+article > div#info-div > div#info-desc > ul {
+    font-size: 1em;
+}
+
+article > div#info-div > div#info-desc > ul li {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 
 footer > hr {
