@@ -60,9 +60,10 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
 
 header > nav > ul li,
 article > div#info-div > div#info-desc > span#info-text > ul li {
-    border-bottom-color: #2FCD6A;
+    border-bottom-color: #ffffff;
     border-bottom-style: solid;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 header > nav > ul li:hover,
