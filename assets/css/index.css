@@ -133,6 +133,11 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
     padding-right: 0.3em;
 }
 
+article > div#info-div > div#alert-messages > div#success,
+article > div#info-div > div#alert-messages > div#failed {
+    display: none;
+}
+
 article > div#info-div > div#markdown-playground {
     height: 100%;
     width: 100%;
