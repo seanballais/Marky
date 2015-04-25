@@ -59,15 +59,19 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
 }
 
 header > nav > ul li:hover,
-article > div#info-div > div#info-desc > div#info-text > ul li:hover {
+article > div#info-div > div#info-desc > span#info-text > ul li:hover {
     cursor: pointer;
-    text-decoration: underline;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-editor > textarea#md-editor,
 article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
     height: 100%;
     width: 100%
+}
+
+article > div#info-div > div#alert-messages > div#success,
+article > div#info-div > div#alert-messages > div#failed {
+    display: none;
 }
 
 /***************************/
@@ -89,6 +93,10 @@ header > h1 > small {
 header > nav > ul li {
     padding-left: 0.5em;
     padding-right: 0.5em;
+}
+
+header > nav > ul li:hover {
+    text-decoration: underline;
 }
 
 header > a > img {
@@ -131,11 +139,6 @@ article > div#info-div > div#info-desc > span#info-text > ul {
 article > div#info-div > div#info-desc > span#info-text > ul li {
     padding-left: 0.3em;
     padding-right: 0.3em;
-}
-
-article > div#info-div > div#alert-messages > div#success,
-article > div#info-div > div#alert-messages > div#failed {
-    display: none;
 }
 
 article > div#info-div > div#markdown-playground {
