@@ -58,16 +58,30 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
     margin-right: 0em;
 }
 
-header > nav > ul li:hover,
-article > div#info-div > div#info-desc > div#info-text > ul li:hover {
+header > nav > ul li,
+article > div#info-div > div#info-desc > span#info-text > ul li {
+    border-bottom-color: #2FCD6A;
+    border-bottom-style: solid;
     cursor: pointer;
-    text-decoration: underline;
+}
+
+header > nav > ul li:hover,
+article > div#info-div > div#info-desc > span#info-text > ul li:hover {
+    border-bottom-color: #1c9041;
+    border-bottom-style: solid;
+    color: #3a8255;
+    cursor: pointer;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-editor > textarea#md-editor,
 article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
     height: 100%;
     width: 100%
+}
+
+article > div#info-div > div#alert-messages > div#success,
+article > div#info-div > div#alert-messages > div#failed {
+    display: none;
 }
 
 /***************************/
@@ -87,6 +101,7 @@ header > h1 > small {
 }
 
 header > nav > ul li {
+    border-bottom-width: 5px;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
@@ -129,6 +144,7 @@ article > div#info-div > div#info-desc > span#info-text > ul {
 }
 
 article > div#info-div > div#info-desc > span#info-text > ul li {
+    border-bottom-width: 3px;
     padding-left: 0.3em;
     padding-right: 0.3em;
 }
