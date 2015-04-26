@@ -28,6 +28,10 @@ div.info-area {
 /*************************/
 /*   Common properties   */
 /*************************/
+body {
+    display: none; /* Only display contents once page has finished loading */
+}
+
 header,
 article,
 footer {
