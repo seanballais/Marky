@@ -42,7 +42,9 @@ function resetThenColor(element) {
 
 // User interactions with Marky
 $(document).ready(function() {
-    $("body").fadeIn("400");
+    // Initial effects
+    
+
 
     // Make the selected <li> 'active'
     $("li").click(function() {
