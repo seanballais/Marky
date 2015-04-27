@@ -185,13 +185,13 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
 }
 
 article > div#info-div > div#markdown-playground {
+    display: block;
     height: 100%;
     width: 100%;
 }
 
 article > div#info-div > div#markdown-playground div {
-    display: inline-block;
-    float: left;
+    display: block;
 }
 
 article > div#info-div > div#markdown-playground div h1 {
@@ -200,13 +200,12 @@ article > div#info-div > div#markdown-playground div h1 {
 
 article > div#info-div > div#markdown-playground > div#markdown-editor {
     padding-right: 5px;
-    width: 45%;
+    width: 100%;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-viewer {
-    height: 100%;
-    width: 55%;
     padding-left: 5px;
+    width: 100%;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {

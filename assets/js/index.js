@@ -43,6 +43,12 @@ function resetThenColor(element) {
     $(element).css("cursor", "initial");
 }
 
+function setTextArea(string) {
+    console.log("Am I working?");
+    $("textarea#md-editor").val(string);
+    $("div#md-output").html(string);
+}
+
 function initPage() {
     resetThenColor("#intro-link");
     $("#topic-title").html("Introduction<small>What is Markdown?</small>");
@@ -70,6 +76,7 @@ function initBasics() {
 
 function basicsPage(subtopic) {
     resetThenColor("#" + subtopic);
+    setTextArea("Your code here...");
     $("button#next-md").attr("class", "btn btn-info disabled");
     $("button#submit-md").attr("class", "btn btn-primary");
 
