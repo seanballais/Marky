@@ -2,14 +2,39 @@
 /// DO NOT CHANGE ANYTHING BELOW UNLESS YU KNOW WHAT YOU'RE DOING
 /// Copyright (C) 2015 Sean Ballais
 **/
-/******************/
-/*   Font faces   */
-/******************/
+/********************************/
+/*   Font faces and keyframes   */
+/********************************/
 @font-face {
     font-family: "Wisdom Script AJ";
     src: url("../fonts/Wisdom Script AJ.otf");
     src: local("Wisdom Script AJ"),
          url("../fonts/Wisdom Script AJ.otf") format("opentype");
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /***************/
@@ -28,6 +53,15 @@ div.info-area {
 /*************************/
 /*   Common properties   */
 /*************************/
+body {
+    /* Add fading in effect (originally handled by jQuery */
+    -webkit-animation: fadeIn 3.5s;
+    -moz-animation: fadeIn 3.5s;
+    -ms-animation: fadeIn 3.5s;
+    -o-animation: fadeIn 3.5s;
+    animation: 3.5s;
+}
+
 header,
 article,
 footer {
@@ -60,9 +94,10 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
 
 header > nav > ul li,
 article > div#info-div > div#info-desc > span#info-text > ul li {
-    border-bottom-color: #2FCD6A;
+    border-bottom-color: #ffffff;
     border-bottom-style: solid;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 header > nav > ul li:hover,
@@ -77,11 +112,6 @@ article > div#info-div > div#markdown-playground > div#markdown-editor > textare
 article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
     height: 100%;
     width: 100%
-}
-
-article > div#info-div > div#alert-messages > div#success,
-article > div#info-div > div#alert-messages > div#failed {
-    display: none;
 }
 
 /***************************/
@@ -150,13 +180,13 @@ article > div#info-div > div#info-desc > span#info-text > ul li {
 }
 
 article > div#info-div > div#markdown-playground {
+    display: block;
     height: 100%;
     width: 100%;
 }
 
 article > div#info-div > div#markdown-playground div {
-    display: inline-block;
-    float: left;
+    display: block;
 }
 
 article > div#info-div > div#markdown-playground div h1 {
@@ -165,13 +195,12 @@ article > div#info-div > div#markdown-playground div h1 {
 
 article > div#info-div > div#markdown-playground > div#markdown-editor {
     padding-right: 5px;
-    width: 45%;
+    width: 100%;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-viewer {
-    height: 100%;
-    width: 55%;
     padding-left: 5px;
+    width: 100%;
 }
 
 article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
@@ -185,20 +214,6 @@ article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-
 
 article > div#info-div > div#btn-input {
     padding-top: 1%;
-}
-
-article > div#info-div > div#btn-input > span {
-    float: left;
-    width: 50%;
-}
-
-article > div#info-div > div#btn-input > span#btn-submit {
-    text-align: left;
-}
-
-article > div#info-div > div#btn-input > span#btn-next {
-    padding-right: 2px;
-    text-align: right;
 }
 
 footer > hr {
