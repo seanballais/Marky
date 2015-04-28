@@ -5,7 +5,7 @@ var links = [
     [
         "intro-link",
         "basics-link",
-        "headers-link",
+        "headings-link",
         "links-link",
         "codes-link",
         "lists-link",
@@ -69,7 +69,7 @@ function initBasics() {
     $("span#info-text > ul li#subtopic-2").html("Italic");
     $("span#info-text > ul li#subtopic-3").html("Strikethrough");
     $("div#markdown-playground").css("display", "inline");
-    $("button#submit-md").attr("class", "btn btn-primary disabled");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
     basicsPage("subtopic-1");
     currentPage = "basics";
 }
@@ -88,7 +88,7 @@ function basicsPage(subtopic) {
             break;
         case "subtopic-2":
             $("#topic-title").html("Basics<small>Italic</small>");
-            $("p#topic-instructions").html("<em>Italicized words</em> in text emphasize a key point or, according to Wikipedia, quote a speaker as a way to show which words they stressed. To turn a word or group of words into italicized text, place one stars (*) before and after the word/s.<br><br>For example:<br><em>\"It's not called being gay, it's called being FABULOUS!\"</em><br>in markdown is<br>*\"It's not called being gay, it's called being FABULOUS!\"*.<br><br>Now try it on your own.");
+            $("p#topic-instructions").html("<em>Italicized words</em> in text emphasize a key point or, according to Wikipedia, quote a speaker as a way to show which words they stressed. To turn a word or group of words into italicized text, place one star (*) before and after the word/s.<br><br>For example:<br><em>\"It's not called being gay, it's called being FABULOUS!\"</em><br>in markdown is<br>*\"It's not called being gay, it's called being FABULOUS!\"*.<br><br>Now try it on your own.");
             subtopicPage = "italic";
             break;
         case "subtopic-3":
@@ -99,6 +99,69 @@ function basicsPage(subtopic) {
     }
 
     console.log("Passed by basicsPage()");
+}
+
+function initHeadings() {
+    resetThenColor("#headings-link");
+    $("#topic-title").html("Headings<small>Heading 1</small>");
+    $("span#info-text > ul li#subtopic-1").css("display", "inline");
+    $("span#info-text > ul li#subtopic-2").css("display", "inline");
+    $("span#info-text > ul li#subtopic-3").css("display", "inline");
+    $("span#info-text > ul li#subtopic-4").css("display", "inline");
+    $("span#info-text > ul li#subtopic-5").css("display", "inline");
+    $("span#info-text > ul li#subtopic-6").css("display", "inline");
+    $("span#info-text > ul li#subtopic-1").html("Heading 1");
+    $("span#info-text > ul li#subtopic-2").html("Heading 2");
+    $("span#info-text > ul li#subtopic-3").html("Heading 3");
+    $("span#info-text > ul li#subtopic-4").html("Heading 4");
+    $("span#info-text > ul li#subtopic-5").html("Heading 5");
+    $("span#info-text > ul li#subtopic-6").html("Heading 6");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    headingsPage("subtopic-1");
+    currentPage = "headings";
+}
+
+function headingsPage(subtopic) {
+    resetThenColor("#" + subtopic);
+    setTextArea("Your code here...");
+    $("button#next-md").attr("class", "btn btn-info disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    switch(subtopic) {
+        case "subtopic-1":
+            $("#topic-title").html("Headings<small>Heading 1</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of most importance, place one octothorpe (#) before the word/s.<br><br>For example:<br><h1>Most Important</h1><br>in markdown is<br># Most Important.<br><br>Now try it on your own.");
+            subtopicPage = "h1";
+            break;
+        case "subtopic-2":
+            $("#topic-title").html("Headings<small>Heading 2</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of second importance, place two octothorpes (#) before the word/s.<br><br>For example:<br><h2>Second Most Important</h2><br>in markdown is<br>## Second Most Important.<br><br>Now try it on your own.");
+            subtopicPage = "h2";
+            break;
+        case "subtopic-3":
+            $("#topic-title").html("Headings<small>Heading 3</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of third importance, place three octothorpes (#) before the word/s.<br><br>For example:<br><h3>Third Most Important</h3><br>in markdown is<br>### Third Most Important.<br><br>Now try it on your own.");
+            subtopicPage = "h3";
+            break;
+        case "subtopic-4":
+            $("#topic-title").html("Headings<small>Heading 4</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of fourth importance, place four octothopres (#) before the word/s.<br><br>For example:<br><h4>Fourth Most Important</h4><br>in markdown is<br>#### Fourth Most Important.<br><br>Now try it on your own.");
+            subtopicPage = "h4";
+            break;
+        case "subtopic-5":
+            $("#topic-title").html("Headings<small>Heading 5</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of fifth importance, place five octothopres (#) before the word/s.<br><br>For example:<br><h5>Fifth Most Important</h5><br>in markdown is<br>##### Fifth Most Important.<br><br>Now try it on your own.");
+            subtopicPage = "h5";
+            break;
+        case "subtopic-6":
+            $("#topic-title").html("Headings<small>Heading 6</small>");
+            $("p#topic-instructions").html("Headings can be used as a title of a page or a section. Headings come in importance, with the largest heading being the most important and the smallest heading being the least important. To create a heading of least importance, place six octothopres (#) before the word/s.<br><br>For example:<br><h6>Least Important</h6><br>in markdown is<br>###### Least Important.<br><br>Now try it on your own.");
+            subtopicPage = "h6";
+            break;
+    }
+
+    console.log("Passed by headingsPage()");
 }
 
 // User interactions with Marky
@@ -112,46 +175,90 @@ $(document).ready(function() {
         resetThenColor(li_ID);
     });
 
-    /******************************************************/
-    /*   Events to handle events with the "Basics" page   */
-    /******************************************************/
+    /**********************************/
+    /*   Functions to handle events   */
+    /**********************************/
     $("li#basics-link").click(function() {
         initBasics();
 
         if (subtopicPage == "") {
-            basicsPage("bold");
+            basicsPage("subtopic-1");
         }
 
         resetThenColor("#basics-link");
         console.log("Basics");
     });
 
+    $("li#headings-link").click(function() {
+        initHeadings();
+
+        if (subtopicPage == "") {
+            headingsPage("subtopic-1");
+        }
+
+        resetThenColor("#headings-link");
+        console.log("Headings");
+    });
+
     $("li#subtopic-1").click(function() { // Points to "bold"
         if (currentPage == "basics") {
             basicsPage("subtopic-1");
+        } else if (currentPage == "headings") {
+            headingsPage("subtopic-1");
         }
 
         resetThenColor("#subtopic-1");
-        console.log("Bold");
+        console.log("Subtopic 1");
     });
 
     $("li#subtopic-2").click(function() { // Points to "bold"
         if (currentPage == "basics") {
             basicsPage("subtopic-2");
+        } else if (currentPage == "headings") {
+            headingsPage("subtopic-2");
         }
 
         resetThenColor("#subtopic-2");
-        console.log("Italic");
+        console.log("Subtopic 2");
     });
 
     $("li#subtopic-3").click(function() { // Points to "bold"
         if (currentPage == "basics") {
             basicsPage("subtopic-3");
+        } else if (currentPage == "headings") {
+            headingsPage("subtopic-3");
         }
 
         resetThenColor("#subtopic-3");
-        console.log("Strikethrough");
+        console.log("Subtopic 3");
     });
 
-    /******************************************************/
+    $("li#subtopic-4").click(function() { // Points to "bold"
+        if (currentPage == "headings") {
+            headingsPage("subtopic-4");
+        }
+
+        resetThenColor("#subtopic-4");
+        console.log("Subtopic 4");
+    });
+
+    $("li#subtopic-5").click(function() { // Points to "bold"
+        if (currentPage == "headings") {
+            headingsPage("subtopic-5");
+        }
+
+        resetThenColor("#subtopic-5");
+        console.log("Subtopic 5");
+    });
+
+    $("li#subtopic-6").click(function() { // Points to "bold"
+        if (currentPage == "headings") {
+            headingsPage("subtopic-6");
+        }
+
+        resetThenColor("#subtopic-6");
+        console.log("Subtopic 6");
+    });
+
+    /*********************************/
 });
