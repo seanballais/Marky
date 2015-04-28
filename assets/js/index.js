@@ -252,6 +252,20 @@ function listsPage(subtopic) {
     console.log("Passed by listsPage()");
 }
 
+function initQuotes() {
+    resetThenColor("#quotes-link");
+    setTextArea("Your code here...");
+    $("#topic-title").html("Block Quotes");
+    $("p#topic-instructions").html("Block quotes can be used to quote a speech. To create a block quote, place an angle bracket (>) before each line that will be included in the quote. <br><br>For example:<br><blockquote><p>Don't be a salad. Be the best brocolli you could ever be.<br>- PewDiePie (2012)</p></blockquote><br>in markdown is<br>> Don't be a salad. be the best brocolli you could ever be.<br>> - PewDiePie (2012)<br><br>Now try it on your own using the code editor below.")
+    $("span#info-text > ul li").css("display", "none");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    currentPage = "quotes";
+    subtopicPage = "";
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -300,6 +314,12 @@ $(document).ready(function() {
         initLists();
         resetThenColor("#lists-link");
         console.log("Lists");
+    });
+
+    $("li#quotes-link").click(function() {
+        initQuotes();
+        resetThenColor("#quotes-link");
+        console.log("Quotes");
     });
 
     $("li#subtopic-1").click(function() { // Points to "bold"
