@@ -209,7 +209,7 @@ function codesPage(subtopic) {
             break;
         case "subtopic-2":
             $("#topic-title").html("Codes<small>Block</small>");
-            $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is <br><space><space><space><space>;printf(\"Hello World!\");<br><space><space><space><space>;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
+            $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is <br>&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;;printf(\"Hello World!\");<br>&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "block-code";
             break;
     }
@@ -284,6 +284,20 @@ function initImages() {
     subtopicPage = "";
 }
 
+function initParagraphs() {
+    resetThenColor("#paragraphs-link");
+    setTextArea("Your code here...");
+    $("#topic-title").html("Paragraphs");
+    $("p#topic-instructions").html("Paragraphs are simply one or more consecutive sentences separated by a blank line. To create a paragraph, write down your sentences without any special formatting or symbols. To separate paragraphs, place 4 spaces after the sentence of the paragraph. The 4 spaces will make the text after it to be written on the next line.<br><br>For example:<br>A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.<br>One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".<br><br>in markdown is<br><br><span style=\"word-wrap: break-word\">A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".</span><br><br>Now try it on your own using the code editor below.")
+    $("span#info-text > ul li").css("display", "none");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    currentPage = "paragraphs";
+    subtopicPage = "";
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -344,7 +358,13 @@ $(document).ready(function() {
         initImages();
         resetThenColor("#images-link");
         console.log("Images");
-    })
+    });
+
+    $("li#paragraphs-link").click(function() {
+        initParagraphs();
+        resetThenColr("#paragraphs-link");
+        console.log("Paragraphs");
+    });
 
     $("li#subtopic-1").click(function() { // Points to "bold"
         if (currentPage == "basics") {
