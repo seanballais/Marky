@@ -55,6 +55,7 @@ function initPage() {
     $("span#info-text > ul li").css("display", "none");
     $("p#topic-instructions").html("According to Wikipedia, Markdown is a markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.<br><br>To start learning about Markdown, press the 'Next' button below or choose an item from the menu above.");
     $("div#markdown-playground").css("display", "none");
+    $("#next-md").html("Next");
     currentPage = "intro";
 }
 
@@ -64,10 +65,14 @@ function initBasics() {
     $("span#info-text > ul li#subtopic-1").css("display", "inline");
     $("span#info-text > ul li#subtopic-2").css("display", "inline");
     $("span#info-text > ul li#subtopic-3").css("display", "inline");
+    $("span#info-text > ul li#subtopic-4").css("display", "none");
+    $("span#info-text > ul li#subtopic-5").css("display", "none");
+    $("span#info-text > ul li#subtopic-6").css("display", "none");
     $("span#info-text > ul li#subtopic-1").html("Bold");
     $("span#info-text > ul li#subtopic-2").html("Italic");
     $("span#info-text > ul li#subtopic-3").html("Strikethrough");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
     basicsPage("subtopic-1");
     currentPage = "basics";
 }
@@ -79,12 +84,12 @@ function basicsPage(subtopic) {
     switch(subtopic) {
         case "subtopic-1":
             $("#topic-title").html("Basics<small>Bold</small>");
-            $("p#topic-instructions").html("<strong>Bold words</strong> in text emphasize a remark or comment. To turn a word or group of words into bold, place two stars (*) before and after the word/s.<br><br>For example:<br><strong>Marky is awesome</strong><br>in markdown is<br>**Marky is awesome**.<br><br>Now try it on your own using the code editor below.");
+            $("p#topic-instructions").html("<strong>Bold words</strong> in text emphasize a remark or comment. To turn a word or group of words into bold text, place two asterisks (*) before and after the word/s.<br><br>For example:<br><strong>Marky is awesome</strong><br>in markdown is<br>**Marky is awesome**.<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "bold";
             break;
         case "subtopic-2":
             $("#topic-title").html("Basics<small>Italic</small>");
-            $("p#topic-instructions").html("<em>Italicized words</em> in text emphasize a key point or, according to Wikipedia, quote a speaker as a way to show which words they stressed. To turn a word or group of words into italicized text, place one star (*) before and after the word/s.<br><br>For example:<br><em>\"It's not called being gay, it's called being FABULOUS!\"</em><br>in markdown is<br>*\"It's not called being gay, it's called being FABULOUS!\"*.<br><br>Now try it on your own using the code editor below.");
+            $("p#topic-instructions").html("<em>Italicized words</em> in text emphasize a key point or, according to Wikipedia, quote a speaker as a way to show which words they stressed. To turn a word or group of words into italicized text, place one asterisk (*) before and after the word/s.<br><br>For example:<br><em>\"It's not called being gay, it's called being FABULOUS!\"</em><br>in markdown is<br>*\"It's not called being gay, it's called being FABULOUS!\"*.<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "italic";
             break;
         case "subtopic-3":
@@ -113,6 +118,7 @@ function initHeadings() {
     $("span#info-text > ul li#subtopic-5").html("Heading 5");
     $("span#info-text > ul li#subtopic-6").html("Heading 6");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
     headingsPage("subtopic-1");
     currentPage = "headings";
 }
@@ -164,6 +170,7 @@ function initLinks() {
     $("p#topic-instructions").html("Links connect one web page to another, or to a section of the same or a different page. To create a link, place the text to be used as the link with square brackets. Then after the brackets, place the page or section to link to inside parentheses.<br><br>For example:<br><a href=\"http://www.codinghorror.com\">Coding Horror</a><br>in markdown is<br>[Coding Horror](http://www.codinghorror.com).<br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
 
     currentPage = "links";
     subtopicPage = "";
@@ -181,6 +188,7 @@ function initCodes() {
     $("span#info-text > ul li#subtopic-1").html("Inline");
     $("span#info-text > ul li#subtopic-2").html("Blocks");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
     codesPage("subtopic-1");
     currentPage = "codes";
 }
@@ -217,6 +225,7 @@ function initLists() {
     $("span#info-text > ul li#subtopic-1").html("Unordered");
     $("span#info-text > ul li#subtopic-2").html("Ordered");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
     listsPage("subtopic-1");
     currentPage = "lists";
 }
@@ -229,12 +238,12 @@ function listsPage(subtopic) {
         case "subtopic-1":
             $("#topic-title").html("Lists<small>Unordered Lists</small>");
             $("p#topic-instructions").html("You can create unordered lists (lists that don't use numbers) using Markdown. To create an unordered list, place one asterisk, plus, or hyphen (*, +, or -) before the word/s to be included in the list.<br><br>For example:<br><ul style=\"width: 100px;\"><li>Emmanuel</li><li>Berto</li><li>Josefina</li></ul><br>in markdown is<br><span style=\"width: 100px;\">+&nbsp;&nbsp;&nbsp;&nbsp;Emmanuel<br>+&nbsp;&nbsp;&nbsp;&nbsp;Berto<br>+&nbsp;&nbsp;&nbsp;&nbsp;Josefina</span><br><br>Now try it on your own using the code editor below.");
-            subtopicPage = "unordered";
+            subtopicPage = "unordered-list";
             break;
         case "subtopic-2":
             $("#topic-title").html("Lists<small>Ordered Lists</small>");
             $("p#topic-instructions").html("You can create ordered lists (lists that use numbers) using Markdown. To create an ordered list, place a number, followed by a period, before the word/s to be included in the list.<br><br>For example:<br><ol style=\"width: 100px;\"><li>Epic Games</li><li>Up Down Games</li><li>Valve Software</li></ol><br>in markdown is<br><span style=\"width: 100px;\">1.&nbsp;&nbsp;&nbsp;Epic Games<br>2.&nbsp;&nbsp;&nbsp;Up Down Games<br>3.&nbsp;&nbsp;&nbsp;Valve Software</span><br><br>Now try it on your own using the code editor below.");
-            subtopicPage = "ordered";
+            subtopicPage = "ordered-list";
             break;
     }
 
@@ -248,7 +257,7 @@ function initQuotes() {
     $("p#topic-instructions").html("Block quotes can be used to quote a speech. To create a block quote, place an angle bracket (>) before each line that will be included in the quote. <br><br>For example:<br><blockquote><p>Don't be a salad. Be the best brocolli you could ever be.<br>- PewDiePie (2012)</p></blockquote><br>in markdown is<br>> Don't be a salad. be the best brocolli you could ever be.<br>> - PewDiePie (2012)<br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
+    $("#next-md").html("Next");
 
     currentPage = "quotes";
     subtopicPage = "";
@@ -261,6 +270,7 @@ function initImages() {
     $("p#topic-instructions").html("Images can be placed inside text with Markdown. To insert an image, type in an exclamation point (!). Then, place square brackets ([]) next to the exclamation point. You may insert text inside the brackets to create an alternate text when the image doesn't load but this is optional. Lastly, add parentheses next to the brackets with the URL or directory of the image inside the parentheses.<br><br>For example:<br><img src=\"http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg\"><br>in markdown is<br><span style=\"word-wrap: break-word;\">![](http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg)</span><br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
 
     currentPage = "images";
     subtopicPage = "";
@@ -273,6 +283,7 @@ function initParagraphs() {
     $("p#topic-instructions").html("Paragraphs are simply one or more consecutive sentences separated by a blank line. To create a paragraph, write down your sentences without any special formatting or symbols. To separate paragraphs, place 4 spaces after the sentence of the paragraph. The 4 spaces will make the text after it to be written on the next line.<br><br>For example:<br>A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.<br>One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".<br><br>in markdown is<br><br><span style=\"word-wrap: break-word\">A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".</span><br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
+    $("#next-md").html("Next");
 
     currentPage = "paragraphs";
     subtopicPage = "";
@@ -285,7 +296,7 @@ function initPlay() {
     $("p#topic-instructions").html("Try out markdown and see what you can make with markdown. This page is entirely dedicated to people wanting to experiment with markdown. Write down markdown on the code editor below and have fun! :-)<br><br><a href=\"http://daringfireball.net/projects/markdown/syntax\" target=\"_blank\">Markdown reference in case you need it</a>");
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").css("display", "none");
+    $("button#next-md").html("Return to the intro");
 
     currentPage = "play";
     subtopicPage = "";
@@ -307,8 +318,79 @@ $(document).ready(function() {
         resetThenColor(li_ID);
     });
 
+    // Go to the next section when the button is pressed
+    $("button#next-md").click(function() {
+        if (currentPage == "intro") {
+            initBasics();
+            resetThenColor("#basics-link");
+            console.log("Went to Basics");
+        } else if (currentPage == "basics") {
+            if (subtopicPage == "bold") {
+                basicsPage("subtopic-2");
+            } else if (subtopicPage == "italic") {
+                basicsPage("subtopic-3");
+            } else if (subtopicPage == "strikethrough") {
+                initHeadings();
+                resetThenColor("#headings-link");
+                console.log("Went to Headings");
+            }
+        } else if (currentPage == "headings") {
+            if (subtopicPage == "h1") {
+                headingsPage("subtopic-2");
+            } else if (subtopicPage == "h2") {
+                headingsPage("subtopic-3");
+            } else if (subtopicPage == "h3") {
+                headingsPage("subtopic-4");
+            } else if (subtopicPage == "h4") {
+                headingsPage("subtopic-5");
+            } else if (subtopicPage == "h5") {
+                headingsPage("subtopic-6");
+            } else if (subtopicPage == "h6") {
+                initLinks();
+                resetThenColor("#links-link");
+                console.log("Went to Links");
+            }
+        } else if (currentPage == "links") {
+            initCodes();
+            resetThenColor("#codes-link");
+            console.log("Went to Codes");
+        } else if (currentPage == "codes") {
+            if (subtopicPage == "inline-code") {
+                codesPage("subtopic-2");
+            } else if (subtopicPage == "block-code") {
+                initLists();
+                resetThenColor("#lists-link");
+                console.log("Went to Lists");
+            }
+        } else if (currentPage == "lists") {
+            if (subtopicPage == "unordered-list") {
+                listsPage("subtopic-2");
+            } else if (subtopicPage == "ordered-list") {
+                initQuotes();
+                resetThenColor("#quotes-link");
+                console.log("Went to Quotes");
+            }
+        } else if (currentPage == "quotes") {
+            initImages();
+            resetThenColor("#images-link");
+            console.log("Went to Images");
+        } else if (currentPage == "images") {
+            initParagraphs();
+            resetThenColor("#paragraphs-link");
+            console.log("Went to Paragraphs");
+        } else if (currentPage == "paragraphs") {
+            initPlay();
+            resetThenColor("#play-link");
+            console.log("Went to PlayWithMarkdown");
+        } else if (currentPage == "play") {
+            initPage();
+            resetThenColor("#intro-link");
+            console.log("Went to Intro");
+        }
+    });
+
     /**********************************/
-    /*   Functions to handle events   */
+    /*   Functions to handle menu events   */
     /**********************************/
     $("li#intro-link").click(function() {
         initPage();
