@@ -183,6 +183,10 @@ function initCodes() {
     $("#topic-title").html("Codes<small>Inline</small>");
     $("span#info-text > ul li#subtopic-1").css("display", "inline");
     $("span#info-text > ul li#subtopic-2").css("display", "inline");
+    $("span#info-text > ul li#subtopic-3").css("display", "none");
+    $("span#info-text > ul li#subtopic-4").css("display", "none");
+    $("span#info-text > ul li#subtopic-5").css("display", "none");
+    $("span#info-text > ul li#subtopic-6").css("display", "none");
     $("span#info-text > ul li#subtopic-1").html("Inline");
     $("span#info-text > ul li#subtopic-2").html("Blocks");
     $("div#markdown-playground").css("display", "inline");
@@ -200,11 +204,11 @@ function codesPage(subtopic) {
     switch(subtopic) {
         case "subtopic-1":
             $("#topic-title").html("Codes<small>Inline</small>");
-            $("p#topic-instructions").html("Codes can be inserted within a sentence. These are called 'inline codes.' To insert an inline code inside a sentence, place the one backtick (`) before and after the code to be inlined.<br><br>For example:<br><code>printf(\"Hello World!\");</code><br>in markdown is<br>`printf(\"Hello World!\");`.<br><br>Now try it on your own using the code editor below.");
+            $("p#topic-instructions").html("Codes can be inserted within a sentence. These are called 'inline codes.' To insert an inline code inside a sentence, place the one backtick (`) before and after the code to be inlined.<br><br>For example:<br>The code,<code>printf(\"Hello World!\");</code>, can be used in C.<br>in markdown is<br>The code,`printf(\"Hello World!\");`, can be used in C.<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "inline-code";
             break;
         case "subtopic-2":
-            $("#topic-title").html("Headings<small>Block</small>");
+            $("#topic-title").html("Codes<small>Block</small>");
             $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is <br><space><space><space><space>;printf(\"Hello World!\");<br><space><space><space><space>;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "block-code";
             break;
@@ -214,7 +218,7 @@ function codesPage(subtopic) {
 }
 
 function initLists() {
-    resetThenColor("#codes-link");
+    resetThenColor("#lists-link");
     $("#topic-title").html("Lists<small>Unordered Lists</small>");
     $("span#info-text > ul li#subtopic-1").css("display", "inline");
     $("span#info-text > ul li#subtopic-2").css("display", "inline");
