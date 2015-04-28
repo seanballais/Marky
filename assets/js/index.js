@@ -205,7 +205,7 @@ function codesPage(subtopic) {
             break;
         case "subtopic-2":
             $("#topic-title").html("Headings<small>Block</small>");
-            $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is (pipes (|) have been added to denote the start of the markdown code)<br>|&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Hello World!\");<br>|&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
+            $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is <br><space><space><space><space>;printf(\"Hello World!\");<br><space><space><space><space>;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
             subtopicPage = "block-code";
             break;
     }
@@ -266,6 +266,20 @@ function initQuotes() {
     subtopicPage = "";
 }
 
+function initImages() {
+    resetThenColor("#images-link");
+    setTextArea("Your code here...");
+    $("#topic-title").html("Images");
+    $("p#topic-instructions").html("Images can be placed inside text with Markdown. To insert an image, type in an exclamation point (!). Then, place square brackets ([]) next to the exclamation point. You may insert text inside the brackets to create an alternate text when the image doesn't load but this is optional. Lastly, add parentheses next to the brackets with the URL or directory of the image inside the parentheses.<br><br>For example:<br><img src=\"http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg\"><br>in markdown is<br><span style=\"word-wrap: break-word;\">![](http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg)</span><br><br>Now try it on your own using the code editor below.")
+    $("span#info-text > ul li").css("display", "none");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    currentPage = "images";
+    subtopicPage = "";
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -321,6 +335,12 @@ $(document).ready(function() {
         resetThenColor("#quotes-link");
         console.log("Quotes");
     });
+
+    $("li#images-link").click(function() {
+        initImages();
+        resetThenColor("#images-link");
+        console.log("Images");
+    })
 
     $("li#subtopic-1").click(function() { // Points to "bold"
         if (currentPage == "basics") {
