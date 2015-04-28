@@ -298,6 +298,20 @@ function initParagraphs() {
     subtopicPage = "";
 }
 
+function initPlay() {
+    resetThenColor("#play-link");
+    setTextArea("Your code here...");
+    $("#topic-title").html("Play With Markdown");
+    $("p#topic-instructions").html("Try out markdown and see what you can make with markdown. This page is entirely dedicated to people wanting to experiment with markdown. Write down markdown on the code editor below and have fun! :-)<br><br><a href=\"http://daringfireball.net/projects/markdown/syntax\" target=\"_blank\">Markdown reference in case you need it</a>");
+    $("span#info-text > ul li").css("display", "none");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").css("display", "none");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    currentPage = "play";
+    subtopicPage = "";
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -362,8 +376,14 @@ $(document).ready(function() {
 
     $("li#paragraphs-link").click(function() {
         initParagraphs();
-        resetThenColr("#paragraphs-link");
+        resetThenColor("#paragraphs-link");
         console.log("Paragraphs");
+    });
+
+    $("li#play-link").click(function () {
+        initPlay();
+        resetThenColor("#play-link");
+        console.log("Play time!");
     });
 
     $("li#subtopic-1").click(function() { // Points to "bold"
