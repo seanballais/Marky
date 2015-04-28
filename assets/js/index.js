@@ -177,6 +177,42 @@ function initLinks() {
     currentPage = "links";
     subtopicPage = "";
 }
+
+function initCodes() {
+    resetThenColor("#codes-link");
+    $("#topic-title").html("Codes<small>Inline</small>");
+    $("span#info-text > ul li#subtopic-1").css("display", "inline");
+    $("span#info-text > ul li#subtopic-2").css("display", "inline");
+    $("span#info-text > ul li#subtopic-1").html("Inline");
+    $("span#info-text > ul li#subtopic-2").html("Blocks");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    codesPage("subtopic-1");
+    currentPage = "codes";
+}
+
+function codesPage(subtopic) {
+    resetThenColor("#" + subtopic);
+    setTextArea("Your code here...");
+    $("button#next-md").attr("class", "btn btn-info disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    switch(subtopic) {
+        case "subtopic-1":
+            $("#topic-title").html("Codes<small>Inline</small>");
+            $("p#topic-instructions").html("Codes can be inserted within a sentence. These are called 'inline codes.' To insert an inline code inside a sentence, place the one backtick (`) before and after the code to be inlined.<br><br>For example:<br><code>printf(\"Hello World!\");</code><br>in markdown is<br>`printf(\"Hello World!\");`.<br><br>Now try it on your own using the code editor below.");
+            subtopicPage = "inline-code";
+            break;
+        case "subtopic-2":
+            $("#topic-title").html("Headings<small>Block</small>");
+            $("p#topic-instructions").html("Codes can be separate from the paragraph. These are called 'block codes.' To specify a block code, place the four spaces before code to be included in the block.<br><br>For example:<br><pre><code>printf(\"Sean Is Handsome!\");</code><br><code>printf(\"Not really!\");</code></pre><br>in markdown is (pipes (|) have been added to denote the start of the markdown code)<br>|&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Hello World!\");<br>|&nbsp;&nbsp;&nbsp;&nbsp;printf(\"Not really!\").<br><br>Now try it on your own using the code editor below.");
+            subtopicPage = "block-code";
+            break;
+    }
+
+    console.log("Passed by codesPage()");
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -199,22 +235,12 @@ $(document).ready(function() {
 
     $("li#basics-link").click(function() {
         initBasics();
-
-        if (subtopicPage == "") {
-            basicsPage("subtopic-1");
-        }
-
         resetThenColor("#basics-link");
         console.log("Basics");
     });
 
     $("li#headings-link").click(function() {
         initHeadings();
-
-        if (subtopicPage == "") {
-            headingsPage("subtopic-1");
-        }
-
         resetThenColor("#headings-link");
         console.log("Headings");
     });
@@ -225,11 +251,19 @@ $(document).ready(function() {
         console.log("Links");
     });
 
+    $("li#codes-link").click(function() {
+        initCodes();
+        resetThenColor("#codes-link");
+        console.log("Codes");
+    });
+
     $("li#subtopic-1").click(function() { // Points to "bold"
         if (currentPage == "basics") {
             basicsPage("subtopic-1");
         } else if (currentPage == "headings") {
             headingsPage("subtopic-1");
+        } else if (currentPage == "codes") {
+            codesPage("subtopic-1");
         }
 
         resetThenColor("#subtopic-1");
@@ -241,6 +275,8 @@ $(document).ready(function() {
             basicsPage("subtopic-2");
         } else if (currentPage == "headings") {
             headingsPage("subtopic-2");
+        } else if (currentPage == "codes") {
+            codesPage("subtopic-2");
         }
 
         resetThenColor("#subtopic-2");
