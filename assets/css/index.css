@@ -2,14 +2,66 @@
 /// DO NOT CHANGE ANYTHING BELOW UNLESS YU KNOW WHAT YOU'RE DOING
 /// Copyright (C) 2015 Sean Ballais
 **/
-/** Font faces */
+/********************************/
+/*   Font faces and keyframes   */
+/********************************/
 @font-face {
     font-family: "Wisdom Script AJ";
     src: url("../fonts/Wisdom Script AJ.otf");
     src: local("Wisdom Script AJ"),
          url("../fonts/Wisdom Script AJ.otf") format("opentype");
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /***************/
+/*   Classes   */
+/***************/
+img.marky-logo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.info-area {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/*************************/
+/*   Common properties   */
+/*************************/
+body {
+    /* Add fading in effect (originally handled by jQuery */
+    -webkit-animation: fadeIn 3.5s;
+    -moz-animation: fadeIn 3.5s;
+    -ms-animation: fadeIn 3.5s;
+    -o-animation: fadeIn 3.5s;
+    animation: 3.5s;
+}
+
 header,
 article,
 footer {
@@ -23,6 +75,48 @@ footer {
     text-align: center;
 }
 
+header > nav > ul,
+article > div#info-div > div#info-desc > span#info-text > ul {
+    font-size: 1.35em;
+    list-style: none;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    word-spacing: -0.3em;
+}
+
+header > nav > ul li,
+article > div#info-div > div#info-desc > span#info-text > ul li {
+    display: inline-block;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+header > nav > ul li,
+article > div#info-div > div#info-desc > span#info-text > ul li {
+    border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+header > nav > ul li:hover,
+article > div#info-div > div#info-desc > span#info-text > ul li:hover {
+    border-bottom-color: #1c9041;
+    border-bottom-style: solid;
+    color: #3a8255;
+    cursor: pointer;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-editor > textarea#md-editor,
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
+    height: 100%;
+    width: 100%
+}
+
+/***************************/
+/*   Specific properties   */
+/***************************/
 header > h1 {
     font-family: "Wisdom Script AJ", sans-serif;
     font-size: 5.35em;    
@@ -36,23 +130,137 @@ header > h1 > small {
     margin-top: 1.25%;
 }
 
-header > nav > ul {
-    font-size: 1.35em;
-    list-style: none;
-    margin-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    word-spacing: -0.3em;
-}
-
-header > nav > ul > li:nth-last-child(-n+9):before {
-    content: "|";
+header > nav > ul li {
+    border-bottom-width: 5px;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
-header > nav > ul > li {
+header > a > img {
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+article > div#info-div > div#info-desc {
     display: inline-block;
-    margin-left: 0em;
-    margin-right: 0em;
+    padding-bottom: 0.5%;
+    width: 100%;
+}
+
+article > div#info-div > div#info-desc > img#marky-prop {
+    display: inline-block;
+    height: 25%;
+    width: 25%;
+    padding-right: 0.5em;
+    vertical-align: top;
+}
+
+article > div#info-div > div#info-desc > span#info-text {
+    display: inline-block;
+    float: right;
+    text-align: center;
+    width: 75%;
+}
+
+article > div#info-div > div#info-desc > span#info-text > h1 > small {
+    display: block;
+    font-size: 0.5em;
+}
+
+article > div#info-div > div#info-desc > span#info-text > ul {
+    font-size: 1em;
+}
+
+article > div#info-div > div#info-desc > span#info-text > ul li {
+    border-bottom-width: 3px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+article > div#info-div > div#markdown-playground {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+article > div#info-div > div#markdown-playground div {
+    display: block;
+}
+
+article > div#info-div > div#markdown-playground div h1 {
+    font-size: 1.2em;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-editor {
+    padding-right: 5px;
+    width: 100%;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer {
+    padding-left: 5px;
+    width: 100%;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output {
+    background-color: #eaeaea;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h1 {
+    font-size: 36px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h2 {
+    font-size: 30px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h3 {
+    font-size: 24px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h4 {
+    font-size: 18px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h5 {
+    font-size: 14px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h6 {
+    font-size: 12px;
+}
+
+article > div#info-div > div#btn-input {
+    padding-top: 1%;
+}
+
+footer > hr {
+    border-width: 3px;
+}
+
+footer > div#about-marky {
+    background-color: #ececec;
+    margin-top: 1%;
+    padding: 1%;
+}
+
+footer > div#about-marky > p#footer-desc {
+    text-align: justify;
+}
+
+footer > div#about-marky > p#footer-desc > img#marky-prop-footer {
+    float: left;
+    height: 11%;
+    width: 11%;
+    padding-right: 1%;
+}
+
+footer > div#about-marky > p#footer-desc > span#footer-social-links {
+    display: block;
 }
