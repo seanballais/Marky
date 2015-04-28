@@ -53,9 +53,8 @@ function initPage() {
     resetThenColor("#intro-link");
     $("#topic-title").html("Introduction<small>What is Markdown?</small>");
     $("span#info-text > ul li").css("display", "none");
-    $("p#topic-instructions").html("According to Wikipedia, Markdown is a markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.<br><br>To start learning about markdown, press the 'Next' button below or choose an item from the menu above.");
+    $("p#topic-instructions").html("According to Wikipedia, Markdown is a markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.<br><br>To start learning about Markdown, press the 'Next' button below or choose an item from the menu above.");
     $("div#markdown-playground").css("display", "none");
-    $("button#submit-md").attr("class", "btn btn-primary disabled");
     currentPage = "intro";
 }
 
@@ -69,7 +68,6 @@ function initBasics() {
     $("span#info-text > ul li#subtopic-2").html("Italic");
     $("span#info-text > ul li#subtopic-3").html("Strikethrough");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
     basicsPage("subtopic-1");
     currentPage = "basics";
 }
@@ -77,8 +75,6 @@ function initBasics() {
 function basicsPage(subtopic) {
     resetThenColor("#" + subtopic);
     setTextArea("Your code here...");
-    $("button#next-md").attr("class", "btn btn-info disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     switch(subtopic) {
         case "subtopic-1":
@@ -117,7 +113,6 @@ function initHeadings() {
     $("span#info-text > ul li#subtopic-5").html("Heading 5");
     $("span#info-text > ul li#subtopic-6").html("Heading 6");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
     headingsPage("subtopic-1");
     currentPage = "headings";
 }
@@ -125,8 +120,6 @@ function initHeadings() {
 function headingsPage(subtopic) {
     resetThenColor("#" + subtopic);
     setTextArea("Your code here...");
-    $("button#next-md").attr("class", "btn btn-info disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     switch(subtopic) {
         case "subtopic-1":
@@ -171,8 +164,6 @@ function initLinks() {
     $("p#topic-instructions").html("Links connect one web page to another, or to a section of the same or a different page. To create a link, place the text to be used as the link with square brackets. Then after the brackets, place the page or section to link to inside parentheses.<br><br>For example:<br><a href=\"http://www.codinghorror.com\">Coding Horror</a><br>in markdown is<br>[Coding Horror](http://www.codinghorror.com).<br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     currentPage = "links";
     subtopicPage = "";
@@ -190,7 +181,6 @@ function initCodes() {
     $("span#info-text > ul li#subtopic-1").html("Inline");
     $("span#info-text > ul li#subtopic-2").html("Blocks");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
     codesPage("subtopic-1");
     currentPage = "codes";
 }
@@ -198,8 +188,6 @@ function initCodes() {
 function codesPage(subtopic) {
     resetThenColor("#" + subtopic);
     setTextArea("Your code here...");
-    $("button#next-md").attr("class", "btn btn-info disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     switch(subtopic) {
         case "subtopic-1":
@@ -229,7 +217,6 @@ function initLists() {
     $("span#info-text > ul li#subtopic-1").html("Unordered");
     $("span#info-text > ul li#subtopic-2").html("Ordered");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
     listsPage("subtopic-1");
     currentPage = "lists";
 }
@@ -237,8 +224,6 @@ function initLists() {
 function listsPage(subtopic) {
     resetThenColor("#" + subtopic);
     setTextArea("Your code here...");
-    $("button#next-md").attr("class", "btn btn-info disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     switch(subtopic) {
         case "subtopic-1":
@@ -264,7 +249,6 @@ function initQuotes() {
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
     $("button#next-md").attr("class", "btn btn-primary disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     currentPage = "quotes";
     subtopicPage = "";
@@ -277,8 +261,6 @@ function initImages() {
     $("p#topic-instructions").html("Images can be placed inside text with Markdown. To insert an image, type in an exclamation point (!). Then, place square brackets ([]) next to the exclamation point. You may insert text inside the brackets to create an alternate text when the image doesn't load but this is optional. Lastly, add parentheses next to the brackets with the URL or directory of the image inside the parentheses.<br><br>For example:<br><img src=\"http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg\"><br>in markdown is<br><span style=\"word-wrap: break-word;\">![](http://img2.wikia.nocookie.net/__cb20080802051949/harrypotter/images/thumb/2/21/150px-Beedle_Collectors.jpg/120px-150px-Beedle_Collectors.jpg)</span><br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     currentPage = "images";
     subtopicPage = "";
@@ -291,8 +273,6 @@ function initParagraphs() {
     $("p#topic-instructions").html("Paragraphs are simply one or more consecutive sentences separated by a blank line. To create a paragraph, write down your sentences without any special formatting or symbols. To separate paragraphs, place 4 spaces after the sentence of the paragraph. The 4 spaces will make the text after it to be written on the next line.<br><br>For example:<br>A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.<br>One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".<br><br>in markdown is<br><br><span style=\"word-wrap: break-word\">A startup band called Blue Sky Holidays has just recently released their latest single, \"Ray Mart Gwapo (Let's Go!)\". As of tonight, the single sold 10 million copies making the band one of the fastest growing bands in the entire world.&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;One the other side of the globe, Up Down Games has just sold 5 million copies of their latest first-person tactical shooter game, \"Roy: Gibiv's Curse\".</span><br><br>Now try it on your own using the code editor below.")
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
-    $("button#next-md").attr("class", "btn btn-primary disabled");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     currentPage = "paragraphs";
     subtopicPage = "";
@@ -306,10 +286,14 @@ function initPlay() {
     $("span#info-text > ul li").css("display", "none");
     $("div#markdown-playground").css("display", "inline");
     $("button#next-md").css("display", "none");
-    $("button#submit-md").attr("class", "btn btn-primary");
 
     currentPage = "play";
     subtopicPage = "";
+}
+
+// Handles the markdown real time generation
+function editorUpdate() {
+    $("div#md-output").html(marked($("textarea#md-editor").val()));
 }
 
 // User interactions with Marky

@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/index.css">
         <script type="text/javascript" src="assets/js/jquery-2.1.3.min.js"></script>
         <script type="text/javascript" src="assets/frameworks/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/marked.js"></script>
         <script type="text/javascript" src="assets/js/index.js"></script>
     </head>
     <body>
@@ -54,15 +55,10 @@
                         <p id="topic-instructions">Instructions</p>
                     </span>
                 </div>
-                <div id="alert-messages" class="container-fluid">
-                    <div id="success" class="alert alert-success">
-                        <strong>We hope you got it right!</strong> You can keep on experimenting. When you are ready, press Next to continue.
-                    </div>
-                </div>
                 <div id="markdown-playground" class="container-fluid">
                     <div id="markdown-editor">
                         <h1>Code Input</h1>
-                        <textarea id="md-editor" rows="5">Your code here...</textarea>
+                        <textarea id="md-editor" rows="5" oninput="editorUpdate()">Your code here...</textarea>
                     </div>
                     <div id="markdown-viewer">
                         <h1>Code Output</h1>
@@ -70,11 +66,8 @@
                     </div>
                 </div>
                 <div id="btn-input" class="container-fluid">
-                    <span id="btn-submit">
-                        <button id="submit-md" type="button" class="btn btn-primary">Submit</button>
-                    </span>
                     <span id="btn-next">
-                        <button id="next-md" type="button" class="btn btn-info">Next</button>
+                        <button id="next-md" type="button" class="btn btn-primary btn-block">Next</button>
                     </span>
                 </div>
             </div>

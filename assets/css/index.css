@@ -114,11 +114,6 @@ article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-
     width: 100%
 }
 
-article > div#info-div > div#alert-messages > div#success,
-article > div#info-div > div#alert-messages > div#failed {
-    display: none;
-}
-
 /***************************/
 /*   Specific properties   */
 /***************************/
@@ -219,20 +214,6 @@ article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-
 
 article > div#info-div > div#btn-input {
     padding-top: 1%;
-}
-
-article > div#info-div > div#btn-input > span {
-    float: left;
-    width: 50%;
-}
-
-article > div#info-div > div#btn-input > span#btn-submit {
-    text-align: left;
-}
-
-article > div#info-div > div#btn-input > span#btn-next {
-    padding-right: 2px;
-    text-align: right;
 }
 
 footer > hr {
