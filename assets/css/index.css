@@ -212,6 +212,30 @@ article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-
     padding: 5px;
 }
 
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h1 {
+    font-size: 36px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h2 {
+    font-size: 30px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h3 {
+    font-size: 24px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h4 {
+    font-size: 18px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h5 {
+    font-size: 14px;
+}
+
+article > div#info-div > div#markdown-playground > div#markdown-viewer > div#md-output h6 {
+    font-size: 12px;
+}
+
 article > div#info-div > div#btn-input {
     padding-top: 1%;
 }
