@@ -213,6 +213,45 @@ function codesPage(subtopic) {
     console.log("Passed by codesPage()");
 }
 
+function initLists() {
+    resetThenColor("#codes-link");
+    $("#topic-title").html("Lists<small>Unordered Lists</small>");
+    $("span#info-text > ul li#subtopic-1").css("display", "inline");
+    $("span#info-text > ul li#subtopic-2").css("display", "inline");
+    $("span#info-text > ul li#subtopic-3").css("display", "none");
+    $("span#info-text > ul li#subtopic-4").css("display", "none");
+    $("span#info-text > ul li#subtopic-5").css("display", "none");
+    $("span#info-text > ul li#subtopic-6").css("display", "none");
+    $("span#info-text > ul li#subtopic-1").html("Unordered");
+    $("span#info-text > ul li#subtopic-2").html("Ordered");
+    $("div#markdown-playground").css("display", "inline");
+    $("button#next-md").attr("class", "btn btn-primary disabled");
+    listsPage("subtopic-1");
+    currentPage = "lists";
+}
+
+function listsPage(subtopic) {
+    resetThenColor("#" + subtopic);
+    setTextArea("Your code here...");
+    $("button#next-md").attr("class", "btn btn-info disabled");
+    $("button#submit-md").attr("class", "btn btn-primary");
+
+    switch(subtopic) {
+        case "subtopic-1":
+            $("#topic-title").html("Lists<small>Unordered Lists</small>");
+            $("p#topic-instructions").html("You can create unordered lists (lists that don't use numbers) using Markdown. To create an unordered list, place one asterisk, plus, or hyphen (*, +, or -) before the word/s to be included in the list.<br><br>For example:<br><ul style=\"width: 100px;\"><li>Emmanuel</li><li>Berto</li><li>Josefina</li></ul><br>in markdown is<br><span style=\"width: 100px;\">+&nbsp;&nbsp;&nbsp;&nbsp;Emmanuel<br>+&nbsp;&nbsp;&nbsp;&nbsp;Berto<br>+&nbsp;&nbsp;&nbsp;&nbsp;Josefina</span><br><br>Now try it on your own using the code editor below.");
+            subtopicPage = "unordered";
+            break;
+        case "subtopic-2":
+            $("#topic-title").html("Lists<small>Ordered Lists</small>");
+            $("p#topic-instructions").html("You can create ordered lists (lists that use numbers) using Markdown. To create an ordered list, place a number, followed by a period, before the word/s to be included in the list.<br><br>For example:<br><ol style=\"width: 100px;\"><li>Epic Games</li><li>Up Down Games</li><li>Valve Software</li></ol><br>in markdown is<br><span style=\"width: 100px;\">1.&nbsp;&nbsp;&nbsp;Epic Games<br>2.&nbsp;&nbsp;&nbsp;Up Down Games<br>3.&nbsp;&nbsp;&nbsp;Valve Software</span><br><br>Now try it on your own using the code editor below.");
+            subtopicPage = "ordered";
+            break;
+    }
+
+    console.log("Passed by listsPage()");
+}
+
 // User interactions with Marky
 $(document).ready(function() {
     initPage(); // Initial set-up
@@ -257,6 +296,12 @@ $(document).ready(function() {
         console.log("Codes");
     });
 
+    $("li#lists-link").click(function() {
+        initLists();
+        resetThenColor("#lists-link");
+        console.log("Lists");
+    });
+
     $("li#subtopic-1").click(function() { // Points to "bold"
         if (currentPage == "basics") {
             basicsPage("subtopic-1");
@@ -264,6 +309,8 @@ $(document).ready(function() {
             headingsPage("subtopic-1");
         } else if (currentPage == "codes") {
             codesPage("subtopic-1");
+        } else if (currentPage == "links") {
+            listsPage("subtopic-1");
         }
 
         resetThenColor("#subtopic-1");
@@ -277,6 +324,8 @@ $(document).ready(function() {
             headingsPage("subtopic-2");
         } else if (currentPage == "codes") {
             codesPage("subtopic-2");
+        } else if (currentPage == "lists") {
+            listsPage("subtopic-2");
         }
 
         resetThenColor("#subtopic-2");
